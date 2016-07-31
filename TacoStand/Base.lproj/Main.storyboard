@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HX0-Y6-PfG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Taco List-->
+        <scene sceneID="B1a-v7-AUn">
+            <objects>
+                <tableViewController id="dFl-jW-S4I" customClass="TacoListTableViewController" customModule="TacoStand" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bjo-uF-nrl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TacoCell" textLabel="bps-bb-oe5" detailTextLabel="YOs-8S-HVy" style="IBUITableViewCellStyleSubtitle" id="1Vi-it-57d" customClass="TacoTableViewCell" customModule="TacoStand" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Vi-it-57d" id="7hQ-aj-zSI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bps-bb-oe5">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YOs-8S-HVy">
+                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="56S-nt-dFi" kind="show" identifier="TacoInfoSegue" id="LUP-PN-ltp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dFl-jW-S4I" id="reB-yZ-cUT"/>
+                            <outlet property="delegate" destination="dFl-jW-S4I" id="BTd-2N-eXd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Taco List" id="MHY-5f-zpE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="q1d-5Z-5eN">
+                            <connections>
+                                <action selector="addTaco" destination="dFl-jW-S4I" id="Jl2-tN-200"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdp-ec-1vD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="421"/>
+        </scene>
+        <!--Taco Information View Controller-->
+        <scene sceneID="vvO-nc-ruA">
+            <objects>
+                <viewController id="56S-nt-dFi" customClass="TacoInformationViewController" customModule="TacoStand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n0U-Nn-max"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYc-Gq-ClB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bbc-Z4-zMI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taco Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTV-LC-jaz">
+                                <rect key="frame" x="257" y="97" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-wj-vLM">
+                                <rect key="frame" x="180" y="126" width="240" height="166"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="GrK-hh-gs3"/>
+                                    <constraint firstAttribute="width" constant="240" id="XJa-89-yKX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5i-1w-i4m">
+                                <rect key="frame" x="278" y="407" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-18-Tf7">
+                                <rect key="frame" x="274" y="436" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WTV-LC-jaz" firstAttribute="top" secondItem="n0U-Nn-max" secondAttribute="bottom" constant="33" id="2Fa-6M-zk6"/>
+                            <constraint firstItem="dYc-Gq-ClB" firstAttribute="top" secondItem="uoc-18-Tf7" secondAttribute="bottom" constant="143" id="B1d-nF-Idc"/>
+                            <constraint firstItem="u5i-1w-i4m" firstAttribute="centerX" secondItem="8wW-wj-vLM" secondAttribute="centerX" id="Dnm-4J-JPY"/>
+                            <constraint firstItem="u5i-1w-i4m" firstAttribute="centerX" secondItem="uoc-18-Tf7" secondAttribute="centerX" id="GnF-cF-VUc"/>
+                            <constraint firstItem="8wW-wj-vLM" firstAttribute="top" secondItem="WTV-LC-jaz" secondAttribute="bottom" constant="8" symbolic="YES" id="Hz3-8z-BJW"/>
+                            <constraint firstItem="WTV-LC-jaz" firstAttribute="centerX" secondItem="bbc-Z4-zMI" secondAttribute="centerX" id="fki-PW-tiH"/>
+                            <constraint firstItem="WTV-LC-jaz" firstAttribute="centerX" secondItem="8wW-wj-vLM" secondAttribute="centerX" id="k4S-zO-bdf"/>
+                            <constraint firstItem="uoc-18-Tf7" firstAttribute="top" secondItem="u5i-1w-i4m" secondAttribute="bottom" constant="8" symbolic="YES" id="wXo-F9-dmL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tacoImage" destination="8wW-wj-vLM" id="BTQ-2D-lFW"/>
+                        <outlet property="tacoName" destination="WTV-LC-jaz" id="Sgb-uR-qEu"/>
+                        <outlet property="tacoPrice" destination="uoc-18-Tf7" id="bFH-59-GeL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="StX-td-sP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="1183"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h0m-mj-uS4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HX0-Y6-PfG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kAk-oM-Iyc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dFl-jW-S4I" kind="relationship" relationship="rootViewController" id="iay-AE-rxi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUx-bs-uWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="421"/>
+        </scene>
+    </scenes>
+</document>
